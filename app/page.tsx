@@ -79,7 +79,7 @@ export default function Home() {
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
-                  </button>
+&                  </button>
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
