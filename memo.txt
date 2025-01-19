@@ -23,7 +23,7 @@ https://www.googleapis.com/youtube/v3/search?part=liveStreamingDetails&&fields=i
 https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id＝8Qiap7rchwY&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
 
 最初にライブの情報を取得
-https://www.googleapis.com/youtube/v3/search?part=liveStreamingDetails&channelId=UCuDY3ibSP2MFRgf7eo3cojg&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCuDY3ibSP2MFRgf7eo3cojg&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
 
 ライブのVIDEOIDからdetailsを取得
 https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id=8Qiap7rchwY&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
