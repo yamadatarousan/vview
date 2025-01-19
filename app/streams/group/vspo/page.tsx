@@ -8,10 +8,15 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'にじさんじ', href: '/streams/group/nijisanji', current: true },
+  { name: 'にじさんじ', href: '/streams/group/nijisanji', current: false },
   { name: 'ホロライブ', href: '/streams/group/hololive', current: false },
-  { name: 'ぶいすぽ', href: '/streams/group/vspo', current: false },
+  { name: 'ぶいすぽ', href: '/streams/group/vspo', current: true },
   { name: 'ネオポルテ', href: '/streams/group/neoporte', current: false },
+  { name: 'のりプロ', href: '/streams/group/noripro', current: false },
+  { name: 'ドットライブ', href: '/streams/group/dotlive', current: false },
+  { name: '774inc', href: '/streams/group/774inc', current: false },
+  { name: 'ホロスターズ', href: '/streams/group/holostars', current: false },
+  { name: 'その他', href: '/streams/group/others', current: false },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
