@@ -6,8 +6,27 @@ UCdyqAaZDKHXg4Ahi7VENThQ
 とこ
 UCXRlIK3Cw_TJIQC5kSJJQMg
 
+https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&fields=items(id,liveStreamingDetails(concurrentViewers))&id＝YTQzbtvGH3A&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+
 request
 https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCXRlIK3Cw_TJIQC5kSJJQMg&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+https://www.googleapis.com/youtube/v3/search?part=liveStreamingDetails&channelId=UCjXBuHmWkieBApgBhDuJMMQ&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCjXBuHmWkieBApgBhDuJMMQ&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+
+part:snippet
+https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCuDY3ibSP2MFRgf7eo3cojg&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+
+part:liveStreamingDetails
+https://www.googleapis.com/youtube/v3/search?part=liveStreamingDetails&channelId=UCuDY3ibSP2MFRgf7eo3cojg&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+https://www.googleapis.com/youtube/v3/search?part=liveStreamingDetails&&fields=items(id%2CliveStreamingDetails(concurrentViewers))&channelId=UCuDY3ibSP2MFRgf7eo3cojg&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+
+https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id＝8Qiap7rchwY&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+
+最初にライブの情報を取得
+https://www.googleapis.com/youtube/v3/search?part=liveStreamingDetails&channelId=UCuDY3ibSP2MFRgf7eo3cojg&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+
+ライブのVIDEOIDからdetailsを取得
+https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id=8Qiap7rchwY&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
 
 response
 {
@@ -51,6 +70,51 @@ response
         "channelTitle": "戌亥とこ -Inui Toko-",
         "liveBroadcastContent": "live",
         "publishTime": "2025-01-18T06:14:39Z"
+      }
+    }
+  ]
+}
+
+  "kind": "youtube#searchListResponse",
+  "etag": "wVQb8hQWXE8nz5NuBmXFUAKauwQ",
+  "regionCode": "JP",
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "k23E-CCXB49t34oKTsQZIId5EGo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "YTQzbtvGH3A"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-19T06:21:34Z",
+        "channelId": "UCjXBuHmWkieBApgBhDuJMMQ",
+        "title": "【 Escape from Tarkov 】いけんのか・・・【ぶいすぽ/八雲べに】",
+        "description": "୨୧┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈୨୧ illustration https://x.com/big_pop_star ありがとうございます✨ ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YTQzbtvGH3A/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YTQzbtvGH3A/mqdefault_live.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YTQzbtvGH3A/hqdefault_live.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "八雲べに",
+        "liveBroadcastContent": "live",
+        "publishTime": "2025-01-19T06:21:34Z"
       }
     }
   ]
