@@ -1,0 +1,57 @@
+https://www.googleapis.com/youtube/v3/search
+
+のえ
+UCdyqAaZDKHXg4Ahi7VENThQ
+
+とこ
+UCXRlIK3Cw_TJIQC5kSJJQMg
+
+request
+https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCXRlIK3Cw_TJIQC5kSJJQMg&eventType=live&type=video&key=AIzaSyBLXEqBQx_wREikE9urQSZ-LHNa5krE5DE
+
+response
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "TLb36IiQSsmDXqE-OWiwOiDKfqI",
+  "regionCode": "JP",
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "OMcUyDkwZwfEQb4eXwKrtmIIFbA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "uWs8_bjPegg"
+      },
+      "snippet": {
+        "publishedAt": "2025-01-18T06:14:39Z",
+        "channelId": "UCXRlIK3Cw_TJIQC5kSJJQMg",
+        "title": "【歌枠】87万人記念！感謝を込めて大好きな曲を歌います！【戌亥とこ/にじさんじ】",
+        "description": "いつだってみんなに救われてます カラオケ音源協力： DAM 第一興商 ※この動画ではDAM音源を使用しているため動画の切り抜き ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uWs8_bjPegg/default_live.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uWs8_bjPegg/mqdefault_live.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uWs8_bjPegg/hqdefault_live.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "戌亥とこ -Inui Toko-",
+        "liveBroadcastContent": "live",
+        "publishTime": "2025-01-18T06:14:39Z"
+      }
+    }
+  ]
+}
