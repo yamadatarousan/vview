@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div>
       <h1>YouTubeライブ配信情報</h1>
-      <LiveStreams query="ゲーム実況" />
+      <LiveStreams query="UCUP8TmlO7NNra88AMqGU_vQ" />
     </div>
   )
 }

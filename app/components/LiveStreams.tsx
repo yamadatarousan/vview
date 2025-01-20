@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Stream } from "stream";
 
 interface LiveStream {
   id: string;
@@ -14,7 +15,7 @@ interface LiveStream {
 }
 
 const LiveStreams: React.FC<{ query: string }> = ({ query }) => {
-  const [liveStreams, setLiveStreams] = useState<LiveStream[]>([]);
+  const [liveStreams, setLiveStreams] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -22,12 +23,35 @@ const LiveStreams: React.FC<{ query: string }> = ({ query }) => {
     const fetchLiveStreams = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`/api/youtube`, {
-          params: { q: query },
+        const liveResponse = await axios.get(`/api/youtube/live`, {
+          params: { channelId: query },
         });
-        setLiveStreams(response.data);
+        console.log("setLiveStreams")
+        console.log(liveResponse.data)
+        const videoId = liveResponse.data.items[0].id.videoId
+        const videoRsponse = await axios.get(`/api/youtube/video`, {
+            params: { id: videoId },
+        });
+        console.log(videoRsponse.data)
+        liveResponse.data.items[0].concurrentViewers
+        = videoRsponse.data.items[0].liveStreamingDetails.concurrentViewers
+        console.log(liveResponse.data)
+        // const liveDetailsResponse = liveResponse.data.items.map((stream) => (
+        //     stream.video = await axios.get(`/api/youtube/video`, {
+        //         params: { channelId: query },
+        //     });
+        //     return stream
+        // });
+        // response.data.video = video;
+        // const withTax = liveResponse.data.items.map((item) => {
+        //     item.video await axios.get(`/api/youtube/video`, {
+        //         params: { videoId: item.id.videoId },
+        //     });
+        //   return item
+        // });
+        setLiveStreams(liveResponse.data.items);
         setError(null);
-      } catch (err) {
+      } catch (err) {   
         console.error(err);
         setError("データの取得に失敗しました。");
       } finally {
@@ -52,9 +76,10 @@ const LiveStreams: React.FC<{ query: string }> = ({ query }) => {
             <li key={stream.id}>
               <h2>{stream.snippet.title}</h2>
               <p>配信者: {stream.snippet.channelTitle}</p>
-              <p>開始時刻: {new Date(stream.liveStreamingDetails.actualStartTime).toLocaleString()}</p>
+              <p>開始時刻: {new Date(stream.snippet.publishTime).toLocaleString()}</p>
+              <p>視聴者数: {stream.concurrentViewers}</p>
               <a
-                href={`https://www.youtube.com/watch?v=${stream.id}`}
+                href={`https://www.youtube.com/watch?v=${stream.id.videoId}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
