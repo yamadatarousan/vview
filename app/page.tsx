@@ -182,9 +182,11 @@ export default async function Page() {
         </header>
         <main>
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <div>
-                <LiveStreams query="UCANDOlYTJT7N5jlRC3zfzVA" />            
+          {vspo.map((streamer) => (
+            <div key={streamer.id}>
+                <LiveStreams query={streamer.id} />            
             </div>
+          ))}
           </div>
         </main>
       </div>

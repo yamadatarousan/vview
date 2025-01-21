@@ -35,7 +35,12 @@ const LiveStreams: React.FC<{ query: string }> = ({ query }) => {
         const liveResponse = await axios.get(`/api/youtube/live`, {
           params: { channelId: query },
         });
+        if(liveResponse.data.items.length === 0) {
+            setError(null);
+            return
+        }
         console.log("setLiveStreams")
+        console.log(query)
         console.log(liveResponse.data)
         const videoId = liveResponse.data.items[0].id.videoId
         const videoRsponse = await axios.get(`/api/youtube/video`, {
@@ -76,9 +81,6 @@ const LiveStreams: React.FC<{ query: string }> = ({ query }) => {
 
   return (
     <div>
-      {liveStreams.length === 0 ? (
-        <p>現在ライブ配信はありません。</p>
-      ) : (
         <div className="bg-white">
             <div className="mx-auto grid max-w-7xl gap-20 xl:grid-cols-3">
                 <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
@@ -103,7 +105,6 @@ const LiveStreams: React.FC<{ query: string }> = ({ query }) => {
                 </ul>
             </div>
         </div>
-      )}
     </div>
   );
 };
