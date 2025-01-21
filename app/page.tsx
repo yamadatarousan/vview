@@ -1,6 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import LiveStreams from "./components/LiveStreams"
+import {fields as vspo} from "./consts/channels/vspo"
 
 const user = {
   name: 'Tom Cook',
@@ -31,7 +32,8 @@ function classNames(...classes) {
 } 
 
 export default async function Page() {
- 
+  console.log("vspo")
+  console.log(vspo)
   return (
     <>
       {/*
