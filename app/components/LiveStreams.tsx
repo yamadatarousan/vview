@@ -3,6 +3,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Stream } from "stream";
 
+const people = [
+    {
+      name: 'Leslie Alexander',
+      role: 'Co-Founder / CEO',
+      imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  ]
+
 interface LiveStream {
   id: string;
   snippet: {
@@ -67,27 +76,33 @@ const LiveStreams: React.FC<{ query: string }> = ({ query }) => {
 
   return (
     <div>
-      <h1>ライブ配信情報</h1>
       {liveStreams.length === 0 ? (
         <p>現在ライブ配信はありません。</p>
       ) : (
-        <ul>
-          {liveStreams.map((stream) => (
-            <li key={stream.id}>
-              <h2>{stream.snippet.title}</h2>
-              <p>配信者: {stream.snippet.channelTitle}</p>
-              <p>開始時刻: {new Date(stream.snippet.publishTime).toLocaleString()}</p>
-              <p>視聴者数: {stream.concurrentViewers}</p>
-              <a
-                href={`https://www.youtube.com/watch?v=${stream.id.videoId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                視聴する
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="bg-white">
+            <div className="mx-auto grid max-w-7xl gap-20 xl:grid-cols-3">
+                <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+                {liveStreams.map((stream) => (
+                    <li key={stream.id}>
+                    <div className="items-center gap-x-6">
+                        <a
+                            href={`https://www.youtube.com/watch?v=${stream.id.videoId}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img alt="" src={stream.snippet.thumbnails.medium.url} className="" />
+                        </a>
+                        <div>
+                            <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">{stream.snippet.title}</h3>
+                            <p className="text-sm/6 font-semibold text-indigo-600">{stream.concurrentViewers}人が視聴中</p>
+                            <p className="text-sm/6 font-semibold text-indigo-600">{new Date(stream.snippet.publishTime).toLocaleString()}&nbsp;に開始</p>
+                        </div>
+                    </div>
+                    </li>
+                ))}
+                </ul>
+            </div>
+        </div>
       )}
     </div>
   );

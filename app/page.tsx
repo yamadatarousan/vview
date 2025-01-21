@@ -182,7 +182,7 @@ export default async function Page() {
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <div>
                 <h1>YouTubeライブ配信情報</h1>
-                <LiveStreams query="UCUP8TmlO7NNra88AMqGU_vQ" />            
+                <LiveStreams query="UCANDOlYTJT7N5jlRC3zfzVA" />            
             </div>
           </div>
         </main>
