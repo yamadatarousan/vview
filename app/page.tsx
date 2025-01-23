@@ -1,7 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import LiveStreams from "./components/LiveStreams"
-import {fields as vspo} from "./consts/channels/vspo"
+import {fields as all} from "./consts/channels/all"
 
 const user = {
   name: 'Tom Cook',
@@ -32,8 +32,8 @@ function classNames(...classes) {
 } 
 
 export default async function Page() {
-  console.log("vspo")
-  console.log(vspo)
+  console.log("all")
+  console.log(all)
   return (
     <>
       {/*
@@ -181,8 +181,8 @@ export default async function Page() {
           </div>
         </header>
         <main>
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          {vspo.map((streamer) => (
+          <div className="flex mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          {all.map((streamer) => (
             <div key={streamer.id}>
                 <LiveStreams query={streamer.id} />            
             </div>

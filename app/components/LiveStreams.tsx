@@ -82,8 +82,8 @@ const LiveStreams: React.FC<{ query: string }> = ({ query }) => {
   return (
     <div>
         <div className="bg-white">
-            <div className="mx-auto grid max-w-7xl gap-20 xl:grid-cols-3">
-                <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+            <div className="mx-auto grid max-w-7xl gap-20">
+                <ul role="list" className="grid gap-x-8 gap-y-12 sm:gap-y-16 xl:col-span-2">
                 {liveStreams.map((stream) => (
                     <li key={stream.id}>
                     <div className="items-center gap-x-6">
